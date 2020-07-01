@@ -10,7 +10,7 @@ class setMitmproxy:
     def start_mitmproxy():
         setProxy = SetProxy()
         setProxy.enable_global_proxy(SetProxy.networkTypes[2])
-        scp = 'mitmdump -s hostMapping.py'
+        scp = 'mitmdump --ssl-insecure -s hostMapping.py'
         try:
             return subprocess.Popen(scp, shell=True)
         except Exception as e:
